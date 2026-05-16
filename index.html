@@ -11,14 +11,12 @@
       const now = new Date();
       const hours = now.getHours().toString().padStart(2, '0');
       const minutes = now.getMinutes().toString().padStart(2, '0');
-      const seconds = now.getSeconds().toString().padStart(2, '0');
       const mseconds = Date.now();
       const mseconds2 = (mseconds / 1000) % 60; // 秒
       const msresult = Math.floor(mseconds2 * 100) / 100; // 小数点第2位で切り捨て
       const timeresult  = `${hours}:${minutes}:${msresult.toFixed(2).padStart(5, '0')}`
       const replaced = timeresult.replace('.',':')
       document.getElementById("clock").textContent = `${replaced}`;
-      document.getElementById("test").textContent = `${mseconds}`;    
     }
     setInterval(updateClock, 10);
   </script></body>
